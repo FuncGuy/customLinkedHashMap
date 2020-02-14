@@ -51,24 +51,24 @@ public class BasicHashMap<K, V> {
     }
 
 
-    public Entry get(K key) {
+    public V get(K key) {
         int hash = getHash(key) ;
-        Entry e = bucket[hash];
+        Entry current = bucket[hash];
 
         // Bucket is identified by hashCode and traversed the bucket
         // till element is not found.
-        while(e != null) {
-            if(e.key.equals(key)) {
-                return e;
+        while(current != null) {
+            if(current.key.equals(key)) {
+                return (V) current.value;
             }
-            e = e.next;
+            current = current.next;
         }
         return null;
     }
 
 
     private int getHash(K key) {
-        return key.hashCode();
+        return key.hashCode() % bucket.length;
     }
 
     public String toString(){
