@@ -15,15 +15,10 @@ public class BasicHashMap<K, V> {
         K key;
         V value;
         Entry<K, V> next;
-        Entry<K, V> after;
-        Entry<K, V> before;
 
-        public Entry(K key, V value, Entry next,Entry after, Entry before){
+        public Entry(K key, V value){
             this.key = key;
             this.value = value;
-            this.next = next;
-            this.after = after;
-            this.before = before;
         }
     }
 
@@ -33,7 +28,7 @@ public class BasicHashMap<K, V> {
 
         Entry<K, V> current = bucket[index];
 
-        Entry<K, V> newEntry = new Entry(key, value, null, null, null);
+        Entry<K, V> newEntry = new Entry(key, value);
 
         if (current == null) {
             bucket[index] = newEntry;
