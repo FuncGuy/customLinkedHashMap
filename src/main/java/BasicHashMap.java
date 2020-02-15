@@ -46,7 +46,7 @@ public class BasicHashMap<K, V> {
                 }
                 current = current.next;
             }
-
+        //ToDo please repalce with below while loop with proper logic this completely nonsense
             current = bucket[index];
             while (current.next!=null){
                 current = current.next;
