@@ -9,5 +9,6 @@ public class BasicHashMapTest {
         System.out.println(map.get(15));
         map.put(16,12);
         System.out.println(map.get(16));
+        System.out.println(map);
     }
 }

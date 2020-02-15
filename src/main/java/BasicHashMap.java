@@ -1,4 +1,6 @@
 import java.util.Arrays;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 
 public class BasicHashMap<K, V> {
@@ -72,6 +74,11 @@ public class BasicHashMap<K, V> {
     }
 
     public String toString(){
-       return Arrays.toString(bucket);
+
+        return Arrays
+                .stream(bucket)
+                .filter(Objects::nonNull)
+                .map(entry -> entry.key+"=" + entry.value.toString())
+                .collect(Collectors.joining(",","{","}"));
     }
 }
