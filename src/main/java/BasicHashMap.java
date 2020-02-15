@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
@@ -25,7 +26,6 @@ public class BasicHashMap<K, V> {
     }
 
     public void put(K key, V value) {
-
         int index = getHash(key);
 
         Entry<K, V> current = bucket[index];
@@ -47,6 +47,10 @@ public class BasicHashMap<K, V> {
                 current = current.next;
             }
 
+            current = bucket[index];
+            while (current.next!=null){
+                current = current.next;
+            }
             current.next = newEntry;
             size++;
         }
@@ -70,7 +74,7 @@ public class BasicHashMap<K, V> {
 
 
     private int getHash(K key) {
-        return key.hashCode() % bucket.length;
+        return 5;
     }
 
     public String toString(){
@@ -80,5 +84,9 @@ public class BasicHashMap<K, V> {
                 .filter(Objects::nonNull)
                 .map(entry -> entry.key+"=" + entry.value.toString())
                 .collect(Collectors.joining(",","{","}"));
+    }
+
+    public int size() {
+        return size;
     }
 }
