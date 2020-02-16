@@ -1,5 +1,4 @@
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
@@ -38,7 +37,7 @@ public class BasicHashMap<K, V> {
 
         } else {
 
-            while (current != null) {
+            while (current.next != null) {
 
                 if (current.key.equals(key)) {
                     current.value = value;
@@ -46,11 +45,7 @@ public class BasicHashMap<K, V> {
                 }
                 current = current.next;
             }
-        //ToDo please repalce with below while loop with proper logic this completely nonsense
-            current = bucket[index];
-            while (current.next!=null){
-                current = current.next;
-            }
+
             current.next = newEntry;
             size++;
         }
