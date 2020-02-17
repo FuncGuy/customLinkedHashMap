@@ -22,7 +22,7 @@ public class BasicHashMapTest {
     }
 
     @Test
-    public void testShouldInsertKeyValueInHashMapf(){
+    public void testShouldInsertKeyValueInHashMapAndPrint(){
 
         BasicHashMap<Integer, Integer> map = new BasicHashMap();
 
@@ -41,9 +41,8 @@ public class BasicHashMapTest {
         map.put(12,2);
         map.put(13,2);
         map.put(14,2);
+        
         System.out.println(map);
-
-        //assertThat(map.size(), is(2));
     }
 
 }
