@@ -13,7 +13,7 @@ public class HashMapCustomTest {
         map.put("Redis","key-value");
         for(int i = 0; i< 500000;i++)
             map.put(i+"",i+"b");
-        map.display();
+            map.display();
 
     }
 
