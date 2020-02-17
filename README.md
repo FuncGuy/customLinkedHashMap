@@ -1,4 +1,4 @@
-# custom HashMap
+# Custom HashMap
 Basic implementation of HashMap.
 
 Basic map provides the same feature that of java.lang.Hashmap 
